@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; background: #000; color: #e5e7eb; }
+body { font: 12px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow: hidden; }
+header { min-height: 46px; display: flex; align-items: center; gap: 18px; padding: 7px 12px; border-bottom: 1px solid #1f2937; }
+.identity { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.identity strong { font-size: 13px; color: #f3f4f6; }
+.btc { color: #f59e0b; font-size: 22px; }
+.venue { color: #9ca3af; }
+.status { padding: 2px 7px; border-radius: 3px; background: #7f1d1d; color: #fff; font-size: 10px; font-weight: 700; }
+.status.live { background: #14532d; }
+.status.sync { background: #713f12; }
+.ohlc { color: #d1d5db; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.controls { margin-left: auto; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+.controls label { color: #9ca3af; display: flex; align-items: center; gap: 5px; }
+select, button { background: #09090b; color: #e5e7eb; border: 1px solid #374151; border-radius: 3px; padding: 4px 7px; font: inherit; }
+button { cursor: pointer; }
+button:hover, select:hover { border-color: #9ca3af; }
+main { position: relative; height: calc(100% - 70px); width: 100%; }
+.crosshair { position: absolute; z-index: 4; visibility: hidden; pointer-events: none; }
+.crosshair.visible { visibility: visible; }
+.crosshair-x { top: 0; bottom: 0; border-left: 1px dashed rgba(156, 163, 175, .75); }
+.crosshair-y { left: 0; right: 0; border-top: 1px dashed rgba(156, 163, 175, .75); }
+footer { height: 24px; display: flex; justify-content: space-between; align-items: center; padding: 0 12px; border-top: 1px solid #1f2937; color: #6b7280; font-size: 10px; }
+.inspector { position: fixed; z-index: 20; max-width: min(440px, calc(100vw - 16px)); padding: 8px 10px; border: 1px solid #374151; border-radius: 3px; background: rgba(0, 0, 0, .94); color: #f3f4f6; font-size: 11px; line-height: 1.55; pointer-events: none; opacity: 0; visibility: hidden; }
+.inspector.visible { opacity: 1; visibility: visible; }
+@media (max-width: 1000px) {
+  .ohlc { display: none; }
+  .identity strong { max-width: 260px; overflow: hidden; text-overflow: ellipsis; }
+}
